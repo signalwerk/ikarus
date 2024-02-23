@@ -1,0 +1,5 @@
+/src/C/ikarus
+/src/TypeScript/node_modules
+
+# private files can be ignored with __** pattern
+__** 

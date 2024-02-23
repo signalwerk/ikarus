@@ -1,0 +1,21 @@
+{
+  "name": "ikarus",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "ts-node main.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.11.20",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
