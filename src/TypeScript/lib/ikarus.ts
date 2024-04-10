@@ -623,22 +623,22 @@ function SaurM(
     const ce = result.ca2;
     const inVal = result.inVal;
 
-    if (inVal === 0)
+    if (inVal === 0) {
       kurve = false; // If it is a small angle, draw a straight line
-    else {
+    } else {
       // Else calculate arcs
       let dr = (1 - ce) / (1 - ca);
       let r2 = knotList[j].ds / (dr * sa + se); // Radius of 2nd circle
       let sh = r2 * (1 - ce); // Cord height
 
-      if (sh < reduceFactor)
+      if (sh < reduceFactor) {
         kurve = false; // If cord height is small, straight line
-      else {
+      } else {
         let r1 = dr * r2;
 
-        if (r1 < 1e-5 && r1 > -1e-5)
+        if (r1 < 1e-5 && r1 > -1e-5) {
           kurve = false; // Small radius, straight line
-        else {
+        } else {
           if (inVal < 0) {
             r1 = -r1;
             r2 = -r2;
