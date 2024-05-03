@@ -54,7 +54,7 @@ function GeradeM(
   x: number,
   y: number,
   pen: Pen,
-  reduceFactor: number
+  reduceFactor: number,
 ): GeradeMResult {
   return { type: ResultSegmentTypes.GeradeM, x, y, pen, reduceFactor };
 }
@@ -81,7 +81,7 @@ function KreisM(
   ym2: number,
   r: number,
   sh: number,
-  reduceFactor: number
+  reduceFactor: number,
 ): KreisMResult {
   return {
     type: ResultSegmentTypes.KreisM,
@@ -103,7 +103,7 @@ export function BuchM(
   istart: number,
   iktot: number,
   reduceFactor: number,
-  knots: Knot[]
+  knots: Knot[],
 ): ResultSegment[] {
   const result: ResultSegment[] = [];
 
@@ -155,7 +155,7 @@ export function BuchM(
           m,
           n,
           istart,
-          iktot
+          iktot,
         ); /* calculate tangents in curvepoints*/
         result.push(...SaurM(m, n, reduceFactor, knots)); /* calculate arcs */
       }
@@ -172,7 +172,7 @@ function SplinM(
   ianf: number,
   iend: number,
   istart: number,
-  iktot: number
+  iktot: number,
 ): void {
   // Initial setup and VektoM call
   VektoM(knots, ianf, iend, istart, iktot);
@@ -398,7 +398,7 @@ function KottaM(knots: Knot[], m: number, n: number): void {
             sa11,
             sa22,
             c2,
-            s2
+            s2,
           );
           c2 = pci;
           s2 = psi;
@@ -468,7 +468,7 @@ function DraikM(
   sa1: number,
   sa2: number,
   ca1: number,
-  ca2: number
+  ca2: number,
 ): {
   sa1: number;
   sa2: number;
@@ -533,7 +533,7 @@ function AusglM(
   sa11: number,
   sa22: number,
   pci: number,
-  psi: number
+  psi: number,
 ): {
   corr: number;
   pci: number;
@@ -593,7 +593,7 @@ function SaurM(
   m: number,
   n: number,
   reduceFactor: number,
-  knotList: Knot[]
+  knotList: Knot[],
 ): ResultSegment[] {
   const segments = [];
   let nn1 = Pen.DOWN;
@@ -614,7 +614,7 @@ function SaurM(
       0,
       0,
       0,
-      0
+      0,
     );
     const sa = result.sa1;
     const se = result.sa2;
@@ -658,7 +658,7 @@ function SaurM(
 
           // Draw first arc
           segments.push(
-            KreisM(xa, ya, xh1, yh1, xm1, ym1, r1, sh, reduceFactor)
+            KreisM(xa, ya, xh1, yh1, xm1, ym1, r1, sh, reduceFactor),
           );
 
           xa = xh1;
@@ -675,8 +675,8 @@ function SaurM(
               ym2,
               r2,
               sh,
-              reduceFactor
-            )
+              reduceFactor,
+            ),
           );
         }
       }
@@ -709,7 +709,7 @@ function VektoM(
   ianf: number,
   iend: number,
   istart: number,
-  iktot: number
+  iktot: number,
 ): void {
   if (knotList[ianf].type === PointType.pntTangt) {
     ianf--;
