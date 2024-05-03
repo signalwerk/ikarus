@@ -366,9 +366,8 @@ function KottaM(knots: Knot[], m: number, n: number): void {
   ca2 = result.ca2;
   inResult = result.inVal;
 
-  for (let i = m + 1; i < n; i++) {
-    pi = knots[i];
-
+  let i;
+  for (i = m + 1; i < n; i++) {
     if (knots[i + 1].type !== PointType.pntAngle) {
       c3 = knots[i + 1].c;
       s3 = knots[i + 1].s;
@@ -377,8 +376,8 @@ function KottaM(knots: Knot[], m: number, n: number): void {
       s3 = knots[i].g;
     }
 
-    css = pi.c0;
-    sss = pi.s0;
+    css = knots[i].c0;
+    sss = knots[i].s0;
 
     // Adjusting based on DraikM's result for the next segment
     result = DraikM(css, sss, c2, s2, c3, s3, sa11, sa22, ca11, ca22);
@@ -411,8 +410,8 @@ function KottaM(knots: Knot[], m: number, n: number): void {
             ca11 = result.ca1;
             ca22 = result.ca2;
 
-            pi.c = c2;
-            pi.s = s2;
+            knots[i].c = c2;
+            knots[i].s = s2;
           }
         }
       } else {
@@ -422,8 +421,8 @@ function KottaM(knots: Knot[], m: number, n: number): void {
         c3 = css;
         s3 = sss;
 
-        pi.c = c2;
-        pi.s = s2;
+        knots[i].c = c2;
+        knots[i].s = s2;
 
         knots[i + 1].c = c3;
         knots[i + 1].s = s3;
