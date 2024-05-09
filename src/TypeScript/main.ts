@@ -1,38 +1,12 @@
 import fs from "fs";
+
 import { Knot, BuchM } from "./lib/ikarus";
 
-function processDigitalTypefaces() {
-  const csv = fs.readFileSync("../../data/DigitalTypefaces.csv", "utf8");
+function processIkarus(inPath: string, outPath: string) {
+  const csv = fs.readFileSync(inPath, "utf8");
 
   const knots: Knot[] = csv.split("\n").map((line) => {
-    const [empty, type, x, y] = line.split("|");
-
-    const newPoint = new Knot();
-    newPoint.x = parseFloat(x);
-    newPoint.y = parseFloat(y);
-    newPoint.type = parseInt(type);
-    return newPoint;
-  });
-
-  let ianf = 0;
-  let iend = knots.length - 1;
-  let istart = 0;
-  let iktot = knots.length;
-  let reduceFactor = 1;
-
-  const result = BuchM(ianf, iend, istart, iktot, reduceFactor, knots);
-
-  fs.writeFileSync(
-    "../../data/DigitalTypefaces_TypeScript.json",
-    JSON.stringify(result, null, 2),
-  );
-}
-
-function processIkarusNimbusSansRegular() {
-  const csv = fs.readFileSync("../../data/IkarusNimbusSansRegular.csv", "utf8");
-
-  const knots: Knot[] = csv.split("\n").filter((line) => !line.startsWith("#")).map((line) => {
-    const [empty, type, x, y] = line.split(" ");
+    const [type, x, y] = line.split(",");
 
     let parsedType: number;
 
@@ -68,11 +42,10 @@ function processIkarusNimbusSansRegular() {
 
   const result = BuchM(ianf, iend, istart, iktot, reduceFactor, knots);
 
-  fs.writeFileSync(
-    "../../data/IkarusNimbusSansRegular_TypeScript.json",
-    JSON.stringify(result, null, 2),
-  );
+  fs.writeFileSync(outPath, JSON.stringify(result, null, 2));
 }
 
-processDigitalTypefaces();
-processIkarusNimbusSansRegular();
+processIkarus(
+  "../../data/IkarusNimbusSansRegular.csv",
+  "../../data/IkarusNimbusSansRegular_TypeScript.json",
+);
