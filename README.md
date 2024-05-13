@@ -34,6 +34,10 @@ The original C `/src/C/lib/` was transcribed from the book. The following correc
 - `BuchM`, `DraikM` and `SplineM` contained most likely logical OR operators (`||`). But the char (`|`) was probably not present in the font used to print the listing and was presumably replaced by a space in the original publication. Spaces were replaced with the char (`|`).
 - Light code and comment formatting without changing the original code-logics
 
+![Ikarus M 2.5 Demo](data/IkarusNimbusSansRegular.png)
+
+> Capture of the original `Ikarus M 2.5` (Demo-Version)
+
 ## TypeScript · direct translation
 
 The TypeScript implementation (`/src/TypeScript/lib/`) is based on the C implementation. The TypeScript implementation is a direct translation of the C code to TypeScript. The TypeScript implementation is not optimized for performance or memory usage. The following points are important to note about the TypeScript implementation:
@@ -42,6 +46,10 @@ The TypeScript implementation (`/src/TypeScript/lib/`) is based on the C impleme
 - The C pointers were convertet to pass objects in TypeScript
 - The input knots are mutated (like in C)
 - Output matches the C output
+
+<video src="https://github.com/signalwerk/ikarus/assets/992878/591809bb-b727-4218-941d-e49880f4a9c8"></video>
+
+> Screencast of the TypeScript implementation rendered in the browser
 
 ## Example and usage
 
@@ -75,3 +83,9 @@ In the book «Digital Typefaces» by Peter Karow, the author states the followin
 ### Example
 
 The Ikarus-Points for the lowercase letter a in `data/IkarusNimbusSansRegular.csv` are taken from `Ikarus M 2.5 Demo` that comes with two example fonts. The CSV was created by exporting the IK points from the file `NIMBUS Sans regular.IK` and then extracted by hand (see `data/IkarusNimbusSansRegular.png`).
+
+## Additional information
+
+- [TypeDrawers · Questions about Ikarus](https://typedrawers.com/discussion/4889/questions-about-ikarus)
+- [Wikipedia · Ikarus](https://en.wikipedia.org/wiki/Ikarus_%28typography_software%29)
+- [Talk · Ikarus Splines · Open Source Implementation of a Pioneering Spline Method for Digital Typography](https://signalwerk.github.io/talk.ikarus-splines/)
