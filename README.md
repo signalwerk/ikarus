@@ -64,6 +64,12 @@ There are four types of points in the IK format:
 | Curve      | 14                  |
 | Tangent    | 15                  |
 
+### IKARUS demo files and IK format
+
+The example data in the CSV is based on the demo font `NIMBUS Sans regular.IK`, which is included in the historical `IKARUS M 2.5 E` demo package. The package also contains `NIMBUS Roman regular.IK` and is available from the [Macintosh Repository](https://www.macintoshrepository.org/32594-ikarus-m). After extraction, the `.IK` files can be found in the `IKARUS Fonts/` directory. The `.IK` files can also be opened with [FontForge](https://fontforge.org/).
+
+For a description of the IKARUS file format, see Peter Karow’s book _Digital Typefaces – Description and Formats_. The 1994 edition is available [on archive.org](https://archive.org/details/digitaltypefaces0000karo/), with the relevant format description starting at [page 243ff](https://archive.org/details/digitaltypefaces0000karo/page/242/mode/2up). For this project, the IK points were extracted with the help of the IKARUS Editor view as seen [here](https://github.com/signalwerk/ikarus/blob/23a504845eb78a359587be1586870cce515dbb4a/data/IkarusNimbusSansRegular.png) and then the CSV was created by hand.
+
 ## License
 
 ### C code
