@@ -88,7 +88,7 @@ In the book «Digital Typefaces» by Peter Karow, the author states the followin
 
 ### Example
 
-The Ikarus-Points for the lowercase letter a in `data/IkarusNimbusSansRegular.csv` are taken from `Ikarus M 2.5 Demo` that comes with two example fonts. The CSV was created by exporting the IK points from the file `NIMBUS Sans regular.IK` and then extracted by hand (see `data/IkarusNimbusSansRegular.png`).
+The Ikarus-Points for the lowercase letter a in `data/IkarusNimbusSansRegular.csv` are taken from [`IKARUS M 2.5 E Demo`](https://www.macintoshrepository.org/32594-ikarus-m) that comes with two example fonts.
 
 ## Additional information
 
